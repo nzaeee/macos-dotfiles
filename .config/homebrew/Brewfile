@@ -26,6 +26,8 @@ brew "starship"
 brew "stow"
 # Terminal multiplexer
 brew "tmux"
+# Tmux plugin manager
+brew "tpm"
 # A better cd command
 brew "zoxide"
 # Zsh plugin that suggests commands as you type based on history
