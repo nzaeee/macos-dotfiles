@@ -19,6 +19,11 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
+# open tmux by default
+if command -v tmux &> /dev/null; then
+  tmux attach || tmux
+fi
+
 # aliases
 # replace ls by eza
 alias ls="eza"
