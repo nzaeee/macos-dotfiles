@@ -1,0 +1,51 @@
+tap "homebrew/bundle"
+
+# A cat clone with syntax highlighting and Git integration
+brew "bat"
+# A matrix client for the command line
+brew "cmatrix"
+# Modern replacement for ls
+brew "eza"
+# Developer targeted fonts with a high number of glyphs
+cask "font-jetbrains-mono-nerd-font"
+# Fuzzy finder for the command line to enhance search capabilities
+brew "fzf"
+# Git client for the command line
+brew "lazygit"
+# Media player that supports a wide range of video and audio formats
+brew "mpv"
+# Fast, highly customizable system info script
+brew "neofetch"
+# Vim-fork focused on extensibility and usability
+brew "neovim"
+# Rust programming language
+brew "rust"
+# Cross-shell prompt that is fast, customizable, and minimal
+brew "starship"
+# Symlink farm manager to easily manage dotfiles
+brew "stow"
+# Terminal multiplexer
+brew "tmux"
+# A better cd command
+brew "zoxide"
+# Zsh plugin that suggests commands as you type based on history
+brew "zsh-autosuggestions"
+# Zsh plugin that provides syntax highlighting for the command line
+brew "zsh-syntax-highlighting"
+
+# Application switcher for macOS that mimics the Windows Alt-Tab behavior
+cask "alt-tab"
+# Platform for developing, shipping, and running applications in containers
+cask "docker"
+# Dock manager for macOS
+cask "dockey"
+# Firefox web browser
+cask "firefox"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Window manager for macOS
+cask "rectangle"
+# Source-code editor made by Microsoft for Windows, Linux, and macOS
+cask "visual-studio-code"
+# GPU-accelerated terminal emulator and multiplexer
+cask "wezterm"
