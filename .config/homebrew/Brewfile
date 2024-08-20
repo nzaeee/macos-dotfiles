@@ -1,3 +1,5 @@
+cask_args appdir: "/Applications"
+
 tap "homebrew/bundle"
 
 # A cat clone with syntax highlighting and Git integration
@@ -18,6 +20,8 @@ brew "mpv"
 brew "neofetch"
 # Vim-fork focused on extensibility and usability
 brew "neovim"
+# Node version manager
+brew "pnpm"
 # Rust programming language
 brew "rust"
 # Cross-shell prompt that is fast, customizable, and minimal
@@ -45,6 +49,8 @@ cask "dockey"
 cask "firefox"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# rofi/alfred alternative for macOS
+cask "raycast"
 # Window manager for macOS
 cask "rectangle"
 # Source-code editor made by Microsoft for Windows, Linux, and macOS
