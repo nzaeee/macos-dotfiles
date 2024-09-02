@@ -3,7 +3,7 @@ return {
 	color_scheme = 'Catppuccin Mocha',
 	enable_tab_bar = false,
 	font_size = 14.0,
-	font = wezterm.font('JetBrainsMono Nerd Font'),
+	font = wezterm.font('CartographCF Nerd Font'),
   default_cursor_style = 'BlinkingBar',
 	macos_window_background_blur = 30,
 	window_background_opacity = 0.8,
