@@ -8,6 +8,8 @@ brew "bat"
 brew "cmatrix"
 # Modern replacement for ls
 brew "eza"
+# Fast, highly customizable system info script
+brew "fastfetch"
 # Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
 # Fuzzy finder for the command line to enhance search capabilities
@@ -16,11 +18,11 @@ brew "fzf"
 brew "lazygit"
 # Media player that supports a wide range of video and audio formats
 brew "mpv"
-# Fast, highly customizable system info script
-brew "neofetch"
 # Vim-fork focused on extensibility and usability
 brew "neovim"
-# Node version manager
+# Node 
+brew "node"
+# Npm alternative
 brew "pnpm"
 # Rust programming language
 brew "rust"
