@@ -8,6 +8,10 @@ eval "$(zoxide init zsh)"
 # activate syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# acces rust/cargo binaries
+export PATH="$HOME/.cargo/bin:$PATH"
+
+
 # disable underline
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
