@@ -51,6 +51,8 @@ cask "docker"
 cask "dockey"
 # Firefox web browser
 cask "firefox"
+# Window manager
+cask "nikitabobko/tap/aerospace"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # rofi/alfred alternative for macOS

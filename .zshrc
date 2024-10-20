@@ -38,3 +38,11 @@ alias cd="z"
 # misc
 alias cls="clear"
 alias cat="bat"
+
+# pnpm
+export PNPM_HOME="/Users/hugo/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
