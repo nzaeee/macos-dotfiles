@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/hugo/.zsh/completions:"* ]]; then export FPATH="/Users/hugo/.zsh/completions:$FPATH"; fi
 
 # init starship 
 eval "$(starship init zsh)"
@@ -46,3 +48,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+. "/Users/hugo/.deno/env"
+# Initialize zsh completions (added by deno install script)
+autoload -Uz compinit
+compinit
+export PATH=$PATH:/Users/hugo/.spicetify
