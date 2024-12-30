@@ -14,6 +14,8 @@ brew "fastfetch"
 cask "font-jetbrains-mono-nerd-font"
 # Fuzzy finder for the command line to enhance search capabilities
 brew "fzf"
+# A syntax-highlighting pager for git, diff, and grep output
+brew "git-delta"
 # Docker client for the command line
 brew "lazydocker"
 # Git client for the command line
@@ -51,15 +53,11 @@ cask "docker"
 cask "dockey"
 # Firefox web browser
 cask "firefox"
+# GPU-accelerated terminal emulator and multiplexer
+cask "ghostty"
 # Window manager for macOS
 cask "nikitabobko/tap/aerospace"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # rofi/alfred alternative for macOS
 cask "raycast"
-# Window manager for macOS
-cask "rectangle"
-# Source-code editor made by Microsoft for Windows, Linux, and macOS
-cask "visual-studio-code"
-# GPU-accelerated terminal emulator and multiplexer
-cask "wezterm"
