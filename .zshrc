@@ -32,7 +32,7 @@ fi
 
 # aliases
 # replace ls by eza
-alias ls="eza"
+alias ls="eza -a"
 
 # replace cd by zoxide
 alias cd="z"
@@ -40,6 +40,10 @@ alias cd="z"
 # misc
 alias cls="clear"
 alias cat="bat"
+
+# git 
+alias g="git"
+alias lg="lazygit"
 
 # pnpm
 export PNPM_HOME="/Users/hugo/Library/pnpm"
