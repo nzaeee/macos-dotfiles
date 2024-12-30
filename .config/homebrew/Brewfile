@@ -8,10 +8,6 @@ brew "bat"
 brew "cmatrix"
 # Modern replacement for ls
 brew "eza"
-# Fast, highly customizable system info script
-brew "fastfetch"
-# Developer targeted fonts with a high number of glyphs
-cask "font-jetbrains-mono-nerd-font"
 # Fuzzy finder for the command line to enhance search capabilities
 brew "fzf"
 # A syntax-highlighting pager for git, diff, and grep output
@@ -22,6 +18,8 @@ brew "lazydocker"
 brew "lazygit"
 # Media player that supports a wide range of video and audio formats
 brew "mpv"
+# Fast, highly customizable system info script
+brew "neofetch"
 # Vim-fork focused on extensibility and usability
 brew "neovim"
 # Node 
@@ -53,6 +51,10 @@ cask "docker"
 cask "dockey"
 # Firefox web browser
 cask "firefox"
+# Developer targeted fonts with a high number of glyphs
+cask "font-jetbrains-mono-nerd-font"
+# Cool font
+cask "font-maple-mono"
 # GPU-accelerated terminal emulator and multiplexer
 cask "ghostty"
 # Window manager for macOS
@@ -61,3 +63,5 @@ cask "nikitabobko/tap/aerospace"
 cask "obsidian"
 # rofi/alfred alternative for macOS
 cask "raycast"
+# symbols for emojis etc
+cask "sf symbols"
