@@ -12,6 +12,8 @@ brew "eza"
 brew "fzf"
 # A syntax-highlighting pager for git, diff, and grep output
 brew "git-delta"
+# Tool for glamorous shell scripts
+brew "gum"
 # Docker client for the command line
 brew "lazydocker"
 # Git client for the command line
@@ -65,5 +67,3 @@ cask "nikitabobko/tap/aerospace"
 cask "obsidian"
 # rofi/alfred alternative for macOS
 cask "raycast"
-# symbols for emojis etc
-cask "sf symbols"
