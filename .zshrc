@@ -13,6 +13,8 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # acces rust/cargo binaries
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# ignore duplicates in history
+setopt HIST_IGNORE_ALL_DUPS
 
 # disable underline
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
@@ -36,6 +38,9 @@ alias ls="eza -a"
 
 # replace cd by zoxide
 alias cd="z"
+
+# view history using fzf
+alias h="history 1 | fzf"
 
 # misc
 alias cls="clear"
