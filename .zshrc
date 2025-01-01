@@ -41,6 +41,9 @@ alias cd="z"
 alias cls="clear"
 alias cat="bat"
 
+# let's be family friendly
+alias f="fuck"
+
 # git 
 alias g="git"
 alias lg="lazygit"
@@ -57,3 +60,5 @@ esac
 autoload -Uz compinit
 compinit
 export PATH=$PATH:/Users/hugo/.spicetify
+
+eval $(thefuck --alias)

@@ -32,6 +32,8 @@ brew "rust"
 brew "starship"
 # Symlink farm manager to easily manage dotfiles
 brew "stow"
+# fffffffff
+brew "thefuck"
 # Terminal multiplexer
 brew "tmux"
 # Tmux plugin manager
