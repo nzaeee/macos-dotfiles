@@ -1,6 +1,6 @@
 # My dotfiles
 
-This directory contains my dotfiles for macOS.
+This repository contains all my dotfiles for macOS, including my Brewfile, my config for zsh, tmux, ghostty and more
 
 ## Requirements
 
@@ -12,7 +12,7 @@ This directory contains my dotfiles for macOS.
 1. Clone this repository
 
    ```sh
-   $ git clone git@github.com:lclhugo/dotfiles.git
+   $ git clone git@github.com:nzxcx/dotfiles.git
    ```
 
 2. Install the brew bundle
