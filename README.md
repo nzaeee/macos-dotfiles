@@ -24,6 +24,6 @@ This repository contains all my dotfiles for macOS, including my Brewfile, my co
 
 3. Use stow to symlink the dotfiles
    ```sh
-   cd dotfiles
+   $ cd dotfiles
    $ stow .
    ```
