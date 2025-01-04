@@ -49,6 +49,9 @@ alias cat="bat"
 # let's be family friendly
 alias f="fuck"
 
+# alias for when sketchybar crashes
+alias sb="brew services restart sketchybar"
+
 # git 
 alias g="git"
 alias lg="lazygit"
