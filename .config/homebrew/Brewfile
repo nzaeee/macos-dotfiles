@@ -61,6 +61,8 @@ cask "font-jetbrains-mono-nerd-font"
 cask "font-maple-mono"
 # GPU-accelerated terminal emulator and multiplexer
 cask "ghostty"
+# better postman
+cask "insomnia"
 # Window manager for macOS
 cask "nikitabobko/tap/aerospace"
 # Knowledge base that works on top of a local folder of plain text Markdown files
