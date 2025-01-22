@@ -1,12 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-# Get the current Wi-Fi SSID
-wifi_name=$(networksetup -listpreferredwirelessnetworks en0 | sed -n '2 p' | tr -d '\t')
+LABEL="$(networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}' | xargs networksetup -getairportnetwork)"
 
-# If the Wi-Fi name is empty, set a default value (e.g., "No Wi-Fi")
-if [ -z "$wifi_name" ]; then
-    wifi_name="Offline"
+if [[ "$LABEL" == *"You are not associated with an AirPort network."* ]]; then
+   sketchybar --set wifi label="Disconnected"
+else   LABEL=$(echo "$LABEL" | sed "s/Current Wi-Fi Network: //")
+   sketchybar --set wifi label="$LABEL"
 fi
-
-# Set the Wi-Fi name as the label in SketchyBar
-sketchybar --set "$NAME" label="$wifi_name"
