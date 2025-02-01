@@ -4,6 +4,8 @@ tap "homebrew/bundle"
 
 # A cat clone with syntax highlighting and Git integration
 brew "bat"
+# TUI Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
+brew "btop"
 # A matrix client for the command line
 brew "cmatrix"
 # Modern replacement for ls

@@ -1,8 +1,8 @@
 # Catppuccin theme - sauce for macchina cli
 
-separator = "⊹ ࣪ "
-separator_color = "#89b4fa"
-key_color = "#89b4fa"
+separator = "⊹ ⊹"
+separator_color = "#cba6f7"
+key_color = "#cba6f7"
 prefer_small_ascii = true
 
 [palette]
@@ -25,7 +25,7 @@ key_color = false
 separator_color = false
 
 [custom_ascii]
-color = "#89b4fa"
+color = "#cba6f7"
 path = "~/dotfiles/.config/macchina/themes/ascii.txt"
 
 [keys]
