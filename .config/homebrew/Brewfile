@@ -59,6 +59,8 @@ cask "dockey"
 cask "firefox"
 # Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
+# Geist mono! 
+cask "font-geist-mono-nerd-font"
 # Cool font
 cask "font-maple-mono"
 # GPU-accelerated terminal emulator and multiplexer
