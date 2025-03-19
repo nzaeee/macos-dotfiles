@@ -1,5 +1,5 @@
 # Add deno completions to search path
-if [[ ":$FPATH:" != *":/Users/hugo/.zsh/completions:"* ]]; then export FPATH="/Users/hugo/.zsh/completions:$FPATH"; fi
+if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then export FPATH="$HOME/.zsh/completions:$FPATH"; fi
 
 # init starship 
 eval "$(starship init zsh)"
@@ -57,16 +57,11 @@ alias g="git"
 alias lg="lazygit"
 
 # pnpm
-export PNPM_HOME="/Users/hugo/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-. "/Users/hugo/.deno/env"
-# Initialize zsh completions (added by deno install script)
-autoload -Uz compinit
-compinit
-export PATH=$PATH:/Users/hugo/.spicetify
 
 eval $(thefuck --alias)
