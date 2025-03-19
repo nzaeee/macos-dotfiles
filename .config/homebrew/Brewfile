@@ -2,74 +2,74 @@ cask_args appdir: "/Applications"
 
 tap "homebrew/bundle"
 
-# A cat clone with syntax highlighting and Git integration
+# Modern cat replacement with syntax highlighting, Git integration, and paging
 brew "bat"
-# TUI Resource monitor that shows usage and stats for processor, memory, disks, network and processes.
+# System resource monitor with real-time CPU, memory, disk, network, and process stats
 brew "btop"
-# A matrix client for the command line
+# Terminal-based Matrix digital rain animation
 brew "cmatrix"
-# Modern replacement for ls
+# Modern ls replacement with Git integration, icons, and tree view
 brew "eza"
-# Fuzzy finder for the command line to enhance search capabilities
+# Fuzzy finder for command line with advanced search and completion
 brew "fzf"
-# A syntax-highlighting pager for git, diff, and grep output
+# Syntax-highlighting pager for Git, diff, and grep with delta improvements
 brew "git-delta"
-# Tool for glamorous shell scripts
+# Beautiful terminal UI toolkit for shell scripts
 brew "gum"
-# Docker client for the command line
+# Docker management TUI with container and image management
 brew "lazydocker"
-# Git client for the command line
+# Git TUI with staging, committing, and diff viewing
 brew "lazygit"
-# Media player that supports a wide range of video and audio formats
+# Media player supporting various formats with hardware acceleration
 brew "mpv"
-# Fast, highly customizable system info script
+# System information tool with customizable display options
 brew "neofetch"
-# Vim-fork focused on extensibility and usability
+# Modern Vim fork with Lua scripting and better defaults
 brew "neovim"
-# Node 
+# JavaScript runtime and package manager
 brew "node"
-# Npm alternative
+# Fast, disk space efficient Node.js package manager
 brew "pnpm"
-# Rust programming language
+# Systems programming language with modern features
 brew "rust"
-# Cross-shell prompt that is fast, customizable, and minimal
+# Fast, minimal, and customizable shell prompt
 brew "starship"
-# Symlink farm manager to easily manage dotfiles
+# Symlink manager for dotfiles and configuration
 brew "stow"
-# fffffffff
+# Command correction tool that suggests fixes for typos
 brew "thefuck"
-# Terminal multiplexer
+# Terminal multiplexer for persistent sessions
 brew "tmux"
-# Tmux plugin manager
+# Tmux plugin manager for easy plugin installation
 brew "tpm"
-# A better cd command
+# Smart directory jumper with learning capabilities
 brew "zoxide"
-# Zsh plugin that suggests commands as you type based on history
+# Fish-like autosuggestions for Zsh command history
 brew "zsh-autosuggestions"
-# Zsh plugin that provides syntax highlighting for the command line
+# Syntax highlighting for Zsh commands
 brew "zsh-syntax-highlighting"
 
-# Application switcher for macOS that mimics the Windows Alt-Tab behavior
+# Windows Alt-Tab style application switcher for macOS
 cask "alt-tab"
-# Platform for developing, shipping, and running applications in containers
+# Container platform for building and running applications
 cask "docker"
-# Dock manager for macOS
+# Dock management tool for macOS
 cask "dockey"
-# Firefox web browser
+# Privacy-focused web browser
 cask "firefox"
-# Developer targeted fonts with a high number of glyphs
+# Programming font with extensive icon support
 cask "font-jetbrains-mono-nerd-font"
-# Geist mono! 
+# Modern monospace font with icon support
 cask "font-geist-mono-nerd-font"
-# Cool font
+# Clean, readable monospace font
 cask "font-maple-mono"
-# GPU-accelerated terminal emulator and multiplexer
+# GPU-accelerated terminal with modern features
 cask "ghostty"
-# better postman
+# API development and testing platform
 cask "insomnia"
-# Window manager for macOS
+# Tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
-# Knowledge base that works on top of a local folder of plain text Markdown files
+# Markdown-based note-taking and knowledge management
 cask "obsidian"
-# rofi/alfred alternative for macOS
+# Spotlight-like productivity tool with extensions
 cask "raycast"
