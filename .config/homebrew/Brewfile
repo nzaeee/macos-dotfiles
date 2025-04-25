@@ -36,6 +36,8 @@ brew "rust"
 brew "starship"
 # Symlink manager for dotfiles and configuration
 brew "stow"
+# A cross-platform, fast and extensible general purpose fuzzy finder TUI.
+brew "television"
 # Command correction tool that suggests fixes for typos
 brew "thefuck"
 # Terminal multiplexer for persistent sessions
