@@ -1,9 +1,9 @@
+window-decoration = true
 theme = catppuccin-mocha
 font-size = 16
+font-thicken = true
 font-family = JetBrains Mono
+font-family-italic = Maple Mono
 mouse-hide-while-typing = true
-window-decoration = true
-# keybind = global:cmd+/=toggle_quick_terminal
 macos-option-as-alt = true
-background-blur-radius = 20 
-
+macos-icon = chalkboard
