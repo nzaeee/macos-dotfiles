@@ -3,7 +3,6 @@ theme = catppuccin-mocha
 font-size = 16
 font-thicken = true
 font-family = JetBrains Mono
-font-family-italic = Maple Mono
 mouse-hide-while-typing = true
 macos-option-as-alt = true
 macos-icon = chalkboard
