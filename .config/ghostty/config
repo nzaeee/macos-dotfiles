@@ -2,6 +2,6 @@ window-decoration = true
 theme = catppuccin-mocha
 font-size = 20
 font-thicken = true
-font-family = JetBrains Mono
+font-family = Maple Mono NF
 mouse-hide-while-typing = true
 macos-option-as-alt = true

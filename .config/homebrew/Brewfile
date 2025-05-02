@@ -67,10 +67,14 @@ cask "font-jetbrains-mono-nerd-font"
 cask "font-geist-mono-nerd-font"
 # Clean, readable monospace font
 cask "font-maple-mono"
+# Same but nerd font
+cask "font-maple-mono-nf"
 # GPU-accelerated terminal with modern features
 cask "ghostty"
 # API development and testing platform
 cask "insomnia"
+# Better Discord client
+cask "legcord"
 # Tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
 # Markdown-based note-taking and knowledge management
