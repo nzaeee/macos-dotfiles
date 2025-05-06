@@ -53,8 +53,6 @@ brew "zsh-autosuggestions"
 # Syntax highlighting for Zsh commands
 brew "zsh-syntax-highlighting"
 
-# Windows Alt-Tab style application switcher for macOS
-cask "alt-tab"
 # Container platform for building and running applications
 cask "docker"
 # Dock management tool for macOS
@@ -71,8 +69,6 @@ cask "font-maple-mono"
 cask "font-maple-mono-nf"
 # GPU-accelerated terminal with modern features
 cask "ghostty"
-# API development and testing platform
-cask "insomnia"
 # Better Discord client
 cask "legcord"
 # Tiling window manager for macOS
