@@ -110,3 +110,5 @@ alias reload="source ~/.zshrc"
 if command -v tmux &> /dev/null; then
   tmux attach || tmux
 fi
+
+fastfetch
