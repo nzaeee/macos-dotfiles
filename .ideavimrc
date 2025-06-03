@@ -1,129 +1,153 @@
-" === COLOR DEFINITIONS ======================================================
-let mauve = '#cba6f7'
-let blue = '#89b4fa'
-let green = '#a6e3a1' 
-let red = '#f38ba8'
+" =======================================================
+" IdeaVim Configuration - AstroVim Inspired Base Setup
+" File: ~/.ideavimrc
+" Version: Corrected Mappings & Comments
+" =======================================================
 
-" === CORE SETTINGS ==========================================================
-set scrolloff=6        " Keep context visible around cursor
-set history=1001       " Extended command history
-set relativenumber      " Hybrid line numbering
+" --- Core Setup & Essential Vim Features ---
 
-" === SEARCH/CASE SETTINGS ==================================================
-set hlsearch            " Highlight search matches
-set incsearch           " Show partial matches while typing
-set ignorecase          " Case-insensitive search
-set smartcase           " Case-sensitive if search contains uppercase
-set gdefault            " Apply substitutions globally by default
+" Set compatible mode off (crucial for modern Vim features)
+set nocompatible
 
-" === PLUGIN ACTIVATION ======================================================
-set multiple-cursors    " Enable multiple cursors
-set surround            " Enable surround operations
-set NERDTree            " Enable file explorer
-set quickscope          " Enhanced f/F/t/T navigation
+" Enable filetype detection and filetype-specific indenting
+filetype plugin indent on
 
-" === WHICH-KEY CONFIGURATION ===============================================
-set which-key           " Enable popup documentation
-nnoremap <SPACE> <Nop>  " Free spacebar for leader mapping
-set notimeout           " Disable mapping timeout
-set timeoutlen=5000     " 5s timeout for key sequences
+" Show line numbers
+set number
+" Show relative line numbers (great for motions like 5k)
+set relativenumber
 
-" Which-key appearance customization
-let g:WhichKey_Dividejr = ' → '     " Key/description separator
-let g:WhichKey_FontFamily = 'GeistMono'
-let g:WhichKey_FontSize = 14
-let g:WhichKey_KeyStyle = 'bold'
-let g:WhichKey_KeyColor = 'keyword'
-let g:WhichKey_PrefixStyle = 'bold'
-let g:WhichKey_PrefixColor = red
-let g:WhichKey_CommandStyle = 'none'
-let g:WhichKey_CommandColor = green
+" Highlight the current line
+set cursorline
 
-" === LEADER CONFIGURATION ==============================sable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior     " Disable spacebar default behavior =
-let mapleader="\<space>" " Set space as leader key
-set showmode            " Display current mode in status bar
+" Show invisible characters (spaces, tabs, newlines)
+set list
+" Customize how invisible characters are displayed
+set listchars=tab:▸\ ,eol:¬,space:·,trail:•,extends:>,precedes:<
 
-" === KEY MAPPINGS ==========================================================
+" Case-insensitive search
+set ignorecase
+" Case-sensitive search if uppercase letters are used in the search term
+set smartcase
 
-" -- NAVIGATION -------------------------------------------------------------
-" Arrow key discipline
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-noremap <Up> <NOP>
+" Highlight search matches as you type
+set incsearch
+" Highlight all search matches
+set hlsearch
 
-" Insert/command mode navigation
-cnoremap <C-h> <Left>
-cnoremap <C-j> <Down>
-cnoremap <C-k> <Up>
-cnoremap <C-l> <Right>
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
+" Always show the status line (e.g., current mode)
+set laststatus=2
 
-" Quick escape
-imap jj <Esc>
+" Auto-indent new lines
+set autoindent
 
-" -- BUFFER MANAGEMENT ------------------------------------------------------
-nmap <leader>xx <Action>(CloseContent)
-nmap <leader>xa <Action>(CloseAllEditors)
-nmap <leader>xo <Action>(CloseAllEditorsButActive)
-nmap <leader>xp <Action>(CloseAllUnpinnedEditors)
+" Smart backspacing (allows backspacing over autoindent, etc.)
+set smartindent
 
-" -- WINDOW/TAB MANAGEMENT --------------------------------------------------
-nmap <C-Tab> <Action>(PreviousTab)
-nmap <Tab> <Action>(NextTab)
-nmap <leader>p <Action>(PinActiveEditorTab)
+" Use spaces instead of tabs
+set expandtab
 
-" Window navigation
-nmap <C-p> <Action>(JumpToLastWindow)
-nmap <C-k> <C-w>k
-nmap <C-j> <C-w>j
-nmap <C-h> <C-w>h
-nmap <C-l> <C-w>l
+" Number of spaces a tab counts for
+set tabstop=4
+" Number of spaces used for each step of (auto)indent
+set shiftwidth=4
 
-" Window manipulation
-nmap <leader>ww <Action>(HideAllWindows)
-nmap <leader>wk <Action>(StretchSplitToTop)
-nmap <leader>wj <Action>(StretchSplitToBottom)
-nmap <leader>wh <Action>(StretchSplitToLeft)
-nmap <leader>wl <Action>(StretchSplitToRight)
-nmap <leader>wm <Action>(MaximizeEditorInSplit)
-nmap <leader>wu <Action>(UnsplitAll)
+" Persistent undo (undo even after closing/reopening files)
+set undofile
+set undodir=~/.ideavim_undo
 
-" -- FILE OPERATIONS --------------------------------------------------------
-nnoremap <leader>e :NERDTreeToggle<CR>  " Toggle file explorer
-nmap <leader>of <Action>(OpenFile)
-nmap <leader>yp <Action>(CopyAbsolutePath)
-nmap <leader>rf <Action>(RecentFiles)
-nmap <leader>rl <Action>(RecentLocations)
-nmap <leader>rp <Action>(ManageRecentProjects)
+" Set leaderhkey to Spacebar (common in Neovim/AstroVim)
+let mapleader = " "
 
-" -- CODE MANIPULATION ------------------------------------------------------
-map <leader>c <Action>(CommentByLineComment)
-map <leader>C <Action>(CommentByBlockComment)
-nmap <leader>fc <Action>(ReformatCode)
-nmap <leader>rn <Action>(RenameElement)
+" --- IdeaVim Extensions (Built-in "plugins" / functionality) ---
+" These enable IdeaVim's enhanced features similar to popular Vim plugins.
 
-" -- DEBUG/RUN CONFIGURATIONS -----------------------------------------------
-nmap <leader>rc <Action>(ContextRun)
-nmap <leader>rx <Action>(chooseRunConfiguration)
-nmap <leader>rr <Action>(Rerun)
-nmap <leader>rt <Action>(RunTests)
-nmap <leader>rs <Action>(Stop)
+" Surround.vim like functionality (ds, cs, ys)
+set ideavim_surround
 
-" === PLUGIN CONFIGURATIONS =================================================
+" Commentary.vim like functionality (gc, gcc, gcap)
+set ideavim_commentary
 
-" QuickScope settings
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-let g:qs_accepted_chars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9']
-let g:qs_primary_color = green
-let g:qs_secondary_color = red
+" ReplaceWithRegister (gr)
+set ideavim_replace_with_register
 
-" Required plugin declarations (keep at bottom)
-Plug 'machakann/vim-highlightedyank'
-set highlightedyank
-let g:highlightedyank_highlight_duration = "1001"
-let g:highlightedyank_highlight_color = "rgba(58, 197, 187, 155)"
-Plug 'tpope/vim-commentary'
+" AceJump (similar to EasyMotion for quick jumps)
+set ideavim_acejump
+
+" Vim-Multiple-Cursors (integrates with JetBrains' multiple cursors)
+set ideavim_multiple_cursors
+
+" Text-Object-VSCode (adds VS Code-like text objects if useful for your workflow)
+" Consider if you need this; it can sometimes add unexpected behaviors.
+" set ideavim_text_object_vscode
+
+" --- AstroVim-like Mappings (JetBrains Actions via IdeaVim) ---
+" Mappings use :<Action>(ActionName)<CR> to correctly execute JetBrains actions.
+
+" File Management
+" Fuzzy find files, symbols, and IDE actions (Search Everywhere)
+map <leader>f :<Action>(SearchEverywhere)<CR>
+" Open Recent Files list
+map <leader>r :<Action>(RecentFiles)<CR>
+" Toggle Project Tool Window (file tree)
+map <leader>e :<Action>(ActivateProjectToolWindow)<CR>
+" Close current editor tab/file
+map <leader>q :<Action>(CloseContent)<CR>
+
+" Tab/Buffer Navigation (JetBrains editor tabs)
+" Go to the next tab
+map <leader>tn :tabnext<CR>
+" Go to the previous tab
+map <leader>tp :tabprevious<CR>
+
+" Search & Replace
+" Find/Replace within the current file
+map <leader>fr :<Action>(Replace)<CR>
+" Find in Project/Paths (global search)
+map <leader>ff :<Action>(FindInPath)<CR>
+
+" Code Navigation & Refactoring
+" Go to Definition/Declaration (like LSP `gd`)
+nmap gd :<Action>(GotoDeclaration)<CR>
+" Find Usages (like LSP `references`)
+nmap gu :<Action>(FindUsages)<CR>
+" Go to Implementation
+map <leader>gi :<Action>(GotoImplementation)<CR>
+" Rename Element
+map <leader>rn :<Action>(RenameElement)<CR>
+" Reformat Code (JetBrains' powerful formatter)
+map <leader>fm :<Action>(ReformatCode)<CR>
+" Show Context Actions / Quick Fixes (like LSP code actions)
+map <leader>ca :<Action>(ShowIntentionActions)<CR>
+
+" Errors & Warnings Navigation
+" Go to the next error/warning
+map <leader>ne :<Action>(NextError)<CR>
+" Go to the previous error/warning
+map <leader>pe :<Action>(PreviousError)<CR>
+
+" Bookmarks (JetBrains' powerful way to mark locations)
+" Toggle Bookmark on current line
+map <leader>bm :<Action>(ToggleBookmark)<CR>
+" Show all Bookmarks
+map <leader>bl :<Action>(ShowBookmarks)<CR>
+
+" Terminal Integration
+" Open the integrated terminal (assuming 'Terminal' is an external tool)
+" Note: The exact action name might vary if you customized your External Tools.
+map <leader>t :<Action>(Tool_External Tools_Terminal)<CR>
+" Activate/Toggle the Terminal Tool Window
+map <leader>tt :<Action>(ActivateTerminalToolWindow)<CR>
+
+" Line Commenting
+" Comment/uncomment line(s) in Visual mode
+vmap <leader>c :<Action>(CommentByLineComment)<CR>
+" Comment/uncomment current line in Normal mode
+nmap <leader>c :<Action>(CommentByLineComment)<CR>
+
+" --- Custom Commands (IdeaVim specific) ---
+
+" Example custom command: Toggle relative line numbers
+command! ToggleRelativeNumber set relativenumber!
+" Map it to <leader>nr
+map <leader>nr :ToggleRelativeNumber<CR>
