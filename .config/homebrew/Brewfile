@@ -4,6 +4,8 @@ tap "homebrew/bundle"
 
 # Modern cat replacement with syntax highlighting, Git integration, and paging
 brew "bat"
+# Cross-platform graphical process/system monitor for the terminal
+brew "bottom"
 # System resource monitor with real-time CPU, memory, disk, network, and process stats
 brew "btop"
 # Terminal-based Matrix digital rain animation
@@ -14,6 +16,8 @@ brew "eza"
 brew "fd"
 # Fuzzy finder for command line with advanced search and completion
 brew "fzf"
+# Disk usage analyzer 
+brew "gdu"
 # Syntax-highlighting pager for Git, diff, and grep with delta improvements
 brew "git-delta"
 # Beautiful terminal UI toolkit for shell scripts
