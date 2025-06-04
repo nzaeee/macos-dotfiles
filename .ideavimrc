@@ -1,153 +1,256 @@
-" =======================================================
-" IdeaVim Configuration - AstroVim Inspired Base Setup
-" File: ~/.ideavimrc
-" Version: Corrected Mappings & Comments
-" =======================================================
-
-" --- Core Setup & Essential Vim Features ---
-
-" Set compatible mode off (crucial for modern Vim features)
-set nocompatible
-
-" Enable filetype detection and filetype-specific indenting
-filetype plugin indent on
-
-" Show line numbers
-set number
-" Show relative line numbers (great for motions like 5k)
-set relativenumber
-
-" Highlight the current line
-set cursorline
-
-" Show invisible characters (spaces, tabs, newlines)
-set list
-" Customize how invisible characters are displayed
-set listchars=tab:▸\ ,eol:¬,space:·,trail:•,extends:>,precedes:<
-
-" Case-insensitive search
-set ignorecase
-" Case-sensitive search if uppercase letters are used in the search term
-set smartcase
-
-" Highlight search matches as you type
-set incsearch
-" Highlight all search matches
-set hlsearch
-
-" Always show the status line (e.g., current mode)
-set laststatus=2
-
-" Auto-indent new lines
-set autoindent
-
-" Smart backspacing (allows backspacing over autoindent, etc.)
-set smartindent
-
-" Use spaces instead of tabs
-set expandtab
-
-" Number of spaces a tab counts for
-set tabstop=4
-" Number of spaces used for each step of (auto)indent
-set shiftwidth=4
-
-" Persistent undo (undo even after closing/reopening files)
-set undofile
-set undodir=~/.ideavim_undo
-
-" Set leaderhkey to Spacebar (common in Neovim/AstroVim)
-let mapleader = " "
-
-" --- IdeaVim Extensions (Built-in "plugins" / functionality) ---
-" These enable IdeaVim's enhanced features similar to popular Vim plugins.
-
-" Surround.vim like functionality (ds, cs, ys)
-set ideavim_surround
-
-" Commentary.vim like functionality (gc, gcc, gcap)
-set ideavim_commentary
-
-" ReplaceWithRegister (gr)
-set ideavim_replace_with_register
-
-" AceJump (similar to EasyMotion for quick jumps)
-set ideavim_acejump
-
-" Vim-Multiple-Cursors (integrates with JetBrains' multiple cursors)
-set ideavim_multiple_cursors
-
-" Text-Object-VSCode (adds VS Code-like text objects if useful for your workflow)
-" Consider if you need this; it can sometimes add unexpected behaviors.
-" set ideavim_text_object_vscode
-
-" --- AstroVim-like Mappings (JetBrains Actions via IdeaVim) ---
-" Mappings use :<Action>(ActionName)<CR> to correctly execute JetBrains actions.
-
-" File Management
-" Fuzzy find files, symbols, and IDE actions (Search Everywhere)
-map <leader>f :<Action>(SearchEverywhere)<CR>
-" Open Recent Files list
-map <leader>r :<Action>(RecentFiles)<CR>
-" Toggle Project Tool Window (file tree)
-map <leader>e :<Action>(ActivateProjectToolWindow)<CR>
-" Close current editor tab/file
-map <leader>q :<Action>(CloseContent)<CR>
-
-" Tab/Buffer Navigation (JetBrains editor tabs)
-" Go to the next tab
-map <leader>tn :tabnext<CR>
-" Go to the previous tab
-map <leader>tp :tabprevious<CR>
-
-" Search & Replace
-" Find/Replace within the current file
-map <leader>fr :<Action>(Replace)<CR>
-" Find in Project/Paths (global search)
-map <leader>ff :<Action>(FindInPath)<CR>
-
-" Code Navigation & Refactoring
-" Go to Definition/Declaration (like LSP `gd`)
-nmap gd :<Action>(GotoDeclaration)<CR>
-" Find Usages (like LSP `references`)
-nmap gu :<Action>(FindUsages)<CR>
-" Go to Implementation
-map <leader>gi :<Action>(GotoImplementation)<CR>
-" Rename Element
-map <leader>rn :<Action>(RenameElement)<CR>
-" Reformat Code (JetBrains' powerful formatter)
-map <leader>fm :<Action>(ReformatCode)<CR>
-" Show Context Actions / Quick Fixes (like LSP code actions)
-map <leader>ca :<Action>(ShowIntentionActions)<CR>
-
-" Errors & Warnings Navigation
-" Go to the next error/warning
-map <leader>ne :<Action>(NextError)<CR>
-" Go to the previous error/warning
-map <leader>pe :<Action>(PreviousError)<CR>
-
-" Bookmarks (JetBrains' powerful way to mark locations)
-" Toggle Bookmark on current line
-map <leader>bm :<Action>(ToggleBookmark)<CR>
-" Show all Bookmarks
-map <leader>bl :<Action>(ShowBookmarks)<CR>
-
-" Terminal Integration
-" Open the integrated terminal (assuming 'Terminal' is an external tool)
-" Note: The exact action name might vary if you customized your External Tools.
-map <leader>t :<Action>(Tool_External Tools_Terminal)<CR>
-" Activate/Toggle the Terminal Tool Window
-map <leader>tt :<Action>(ActivateTerminalToolWindow)<CR>
-
-" Line Commenting
-" Comment/uncomment line(s) in Visual mode
-vmap <leader>c :<Action>(CommentByLineComment)<CR>
-" Comment/uncomment current line in Normal mode
-nmap <leader>c :<Action>(CommentByLineComment)<CR>
-
-" --- Custom Commands (IdeaVim specific) ---
-
-" Example custom command: Toggle relative line numbers
-command! ToggleRelativeNumber set relativenumber!
-" Map it to <leader>nr
-map <leader>nr :ToggleRelativeNumber<CR>
+" =============================="     General Configuration" ==============================  
+" Set compatible mode off (crucial for modern Vim features)set nocompatible  
+  
+" Number of lines to keep above and below the cursor when scrollingset scrolloff=10  
+  
+" Show the current mode (e.g., INSERT, NORMAL)set showmode  
+  
+" Show the command being typedset showcmd  
+  
+" Always show the status line (e.g., current mode)set laststatus=2  
+  
+" Persistent undo (undo even after closing/reopening files)set undofile  
+" Directory to store undo filesset undodir=~/.ideavim_undo  
+  
+" Use visual bell instead of audible bellset visualbell  
+  
+" =============================="     Display Configuration" ==============================  
+" Show line numbersset number  
+" Show relative line numbers (great for motions like 5k)set relativenumber  
+  
+" Highlight the current lineset cursorline  
+  
+" Show invisible characters (spaces, tabs, newlines)set list  
+set listchars=tab:▸\ ,eol:¬,space:·,trail:•,extends:>,precedes:<  
+  
+" =============================="     Search Configuration" ==============================  
+" Case-insensitive searchset ignorecase  
+" Case-sensitive search if uppercase letters are used in the search termset smartcase  
+  
+" Highlight search matches as you typeset incsearch  
+" Highlight all search matchesset hlsearch  
+  
+" =============================="     Indentation & Tabs" ==============================  
+" Enable filetype detection and filetype-specific indentingfiletype plugin indent on  
+  
+" Auto-indent new linesset autoindent  
+  
+" Smart backspacing (allows backspacing over autoindent, etc.)set smartindent  
+  
+" Use spaces instead of tabsset expandtab  
+  
+" Number of spaces a tab counts forset tabstop=4  
+" Number of spaces used for each step of (auto)indentset shiftwidth=4  
+  
+" =============================="     Plugin Specific Settings" ==============================  
+" Easymotion settingsset easymotion  
+set notimeout  
+  
+" QuickScope settingslet g:qs_highlight_on_keys = ['f', 'F', 't', 'T']  
+let g:qs_accepted_chars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9']  
+set quickscope  
+  
+" Highlight copied textset highlightedyank  
+let g:highlightedyank_highlight_duration = "1000"  
+let g:highlightedyank_highlight_color = "rgba(187, 147, 249, 155)"  
+  
+" =============================="     Key Mappings" ==============================  
+" Disable default behavior of space key and set it as leader keymap <space> <nop>  
+let mapleader="\<space>"  
+  
+" Better escape for insert modeimap jk <Esc>  
+  
+" Remove Arrow key mappings to encourage Vim motionsnoremap <Down> <NOP>  
+noremap <Left> <NOP>  
+noremap <Right> <NOP>  
+noremap <Up> <NOP>  
+  
+" Paste without yanking the deleted text in visual modexnoremap p P  
+  
+" Easy system clipboard copy/pastenoremap <leader>y "*y  
+noremap <leader>Y "*Y  
+noremap <leader>p "*p  
+noremap <leader>P "*P  
+  
+" =============================="     Navigation & Jumping" ==============================  
+" Go back in navigation historynmap <C-i> <Action>(Back)  
+" Go forward in navigation historynmap <C-o> <Action>(Forward)  
+  
+" Jump between methods (based on language structure)nnoremap [[ <Action>(MethodUp)  
+nnoremap ]] <Action>(MethodDown)  
+  
+" Go to errorsnnoremap gn :action ReSharperGotoNextErrorInSolution  
+" Go to next errormap <leader>en <Action>(ReSharperGotoNextErrorInSolution)  
+" Go to previous errormap <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)  
+  
+" =============================="     File & Buffer Management" ==============================  
+" Close current buffer/editornmap <leader>xx <Action>(CloseContent)  
+" Close all editorsnmap <leader>xa <Action>(CloseAllEditors)  
+" Close all editors but the active onenmap <leader>xo <Action>(CloseAllEditorsButActive)  
+" Close all unpinned editorsnmap <leader>xp <Action>(CloseAllUnpinnedEditors)  
+  
+" Pin active editor tabnmap <leader>p <Action>(PinActiveEditorTab)  
+  
+" Open NERDTree (use q to exit)map <leader>e :NERDTreeToggle<CR>  
+  
+" File navigation" Go to filemap <leader>ff <action>(GotoFile)  
+" Recent filesmap <leader>fr <action>(RecentFiles)  
+map <leader>rf <Action>(RecentFiles) " Duplicate, keeping one.  
+" Open filenmap <leader>of <Action>(OpenFile)  
+" Copy absolute path of current filenmap <leader>yp <Action>(CopyAbsolutePath)  
+" Show recent locationsnmap <leader>rl <Action>(RecentLocations)  
+" Manage recent projectsnmap <leader>rp <Action>(ManageRecentProjects)  
+" Show local historynmap <leader>sh <Action>(LocalHistory.ShowHistory)  
+" Show file pathnmap <leader>sf <Action>(ShowFilePath)  
+" Select current file in various viewsnmap <leader>si <Action>(SelectIn)  
+" Find in pathnmap <leader>fp <Action>(FindInPath)  
+" Replace in pathnmap <leader>rp <Action>(ReplaceInPath)  
+" Search webnmap <leader>sw <Action>($SearchWeb)  
+  
+  
+" =============================="     Window & Tab Management" ==============================  
+" Go to previous tabnmap <C-Tab> <Action>(PreviousTab)  
+" Go to next tabnmap <Tab> <Action>(NextTab)  
+  
+" Go to specific tab by numbernmap <leader>1 <Action>(GoToTab1)  
+nmap <leader>2 <Action>(GoToTab2)  
+nmap <leader>3 <Action>(GoToTab3)  
+nmap <leader>4 <Action>(GoToTab4)  
+nmap <leader>5 <Action>(GoToTab5)  
+nmap <leader>6 <Action>(GoToTab6)  
+nmap <leader>7 <Action>(GoToTab7)  
+nmap <leader>8 <Action>(GoToTab8)  
+nmap <leader>9 <Action>(GoToTab9)  
+  
+" Split horizontallymap <leader>sh <Action>(SplitHorizontally)  
+" Split verticallymap <leader>sv <Action>(SplitVertically)  
+  
+" Navigate between windows (splits)nmap <C-k> <C-w>k  
+nmap <C-j> <C-w>j  
+nmap <C-h> <C-w>h  
+nmap <C-l> <C-w>l  
+  
+" Hide all tool windowsnmap <leader>ww <Action>(HideAllWindows)  
+" Stretch split to topnmap <leader>wk <Action>(StretchSplitToTop)  
+" Stretch split to bottomnmap <leader>wj <Action>(StretchSplitToBottom)  
+" Stretch split to leftnmap <leader>wh <Action>(StretchSplitToLeft)  
+" Stretch split to rightnmap <leader>wl <Action>(StretchSplitToRight)  
+" Maximize editor in splitnmap <leader>wm <Action>(MaximizeEditorInSplit)  
+" Unsplit all windowsnmap <leader>wu <Action>(UnsplitAll)  
+  
+" =============================="     Code Editing & Refactoring" ==============================  
+" Toggle line commentmap <leader>c <Action>(CommentByLineComment)  
+" Toggle block commentmap <leader>C <Action>(CommentByBlockComment)  
+" Show intention actions/quick fixnmap <leader>qf <Action>(ShowIntentionActions)  
+" Show error descriptionnmap <leader>se <Action>(ShowErrorDescription)  
+" Override methodsnmap <leader>om <Action>(OverrideMethods)  
+" Implement methodsnmap <leader>im <Action>(ImplementMethods)  
+" Reformat codenmap <leader>fc <Action>(ReformatCode)  
+" Inspect codenmap <leader>ic <Action>(InspectCode)  
+" Select all occurrences of the current wordnmap <leader>so <Action>(SelectAllOccurrences)  
+" Generate code (e.g., constructors, getters/setters)nmap <leader>gc <Action>(Generate)  
+" Go to test (for current file/class)nmap <leader>gt <Action>(GotoTest)  
+  
+" Refactorings" Rename elementnmap <leader>rn <Action>(RenameElement)  
+" Quick list of refactoringsnmap <leader>re <Action>(Refactorings.QuickListPopupAction)  
+" Unwrap/Remove enclosing constructnmap <leader>uw <Action>(Unwrap)  
+" Surround withnmap <leader>sw <Action>(SurroundWith)  
+" Safe deletenmap <leader>sd <Action>(SafeDelete)  
+" Optimize importsnmap <leader>oi <Action>(OptimizeImports)  
+  
+" Join linesnmap \\jl <Action>(EditorJoinLines)  
+  
+" =============================="     Harpoon (Quick Navigation)" ==============================  
+" Show Recent Files (also Harpoon UI in some contexts)map <leader>e <Action>(RecentFiles)  
+" Show Harpoon files/marksmap <leader>E <Action>(ShowHarpoon)  
+  
+" Set Harpoon mark 1map <leader><C-j> <Action>(SetHarpoon1)  
+" Go to Harpoon mark 1map <C-j> <Action>(GotoHarpoon1)  
+" Go to Harpoon mark 1 (and switch window if necessary)map <C-S-j> <C-w><C-w><Action>(GotoHarpoon1)  
+  
+" Set Harpoon mark 2map <leader><C-k> <Action>(SetHarpoon2)  
+" Go to Harpoon mark 2map <C-k> <Action>(GotoHarpoon2)  
+" Go to Harpoon mark 2 (and switch window if necessary)map <C-S-k> <C-w><C-w><Action>(GotoHarpoon2)  
+  
+" Set Harpoon mark 3map <leader><C-l> <Action>(SetHarpoon3)  
+" Go to Harpoon mark 3map <C-l> <Action>(GotoHarpoon3)  
+" Go to Harpoon mark 3 (and switch window if necessary)map <C-S-l> <C-w><C-w><Action>(GotoHarpoon3)  
+  
+" Set Harpoon mark 4map <leader><C-h> <Action>(SetHarpoon4)  
+" Go to Harpoon mark 4map <C-h> <Action>(GotoHarpoon4)  
+" Go to Harpoon mark 4 (and switch window if necessary)map <C-S-h> <C-w><C-w><Action>(GotoHarpoon4)  
+  
+" =============================="     Context Menus & Tool Windows" ==============================  
+" Main menunmap <leader>mm <Action>(MainMenu)  
+" Analyze menunmap <leader>ma <Action>(AnalyzeMenu)  
+" Build menunmap <leader>mb <Action>(BuildMenu)  
+" Code menunmap <leader>mc <Action>(CodeMenu)  
+" Find menu groupnmap <leader>mf <Action>(FindMenuGroup)  
+" Go To menunmap <leader>mg <Action>(GoToMenu)  
+" Scope View popup menunmap <leader>ms <Action>(ScopeViewPopupMenu)  
+" Editor tab popup menunmap <leader>mt <Action>(EditorTabPopupMenu)  
+" Tool Windows groupnmap <leader>mw <Action>(ToolWindowsGroup)  
+  
+" =============================="     Debugging" ==============================  
+" Debug (run current configuration in debug mode)nmap <leader>dx <Action>(Debug)  
+" Context debug (debug focused element/file)nmap <leader>dc <Action>(ContextDebug)  
+" Toggle line breakpointnmap <leader>db <Action>(ToggleLineBreakpoint)  
+" Edit breakpoint propertiesnmap <leader>de <Action>(EditBreakpoint)  
+" View all breakpointsnmap <leader>dv <Action>(ViewBreakpoints)  
+  
+" =============================="     Building" ==============================  
+" Build menunmap <leader>bb <Action>(BuildMenu)  
+  
+" =============================="     Hierarchy Views" ==============================  
+" Show Call Hierarchynmap <leader>hc <Action>(CallHierarchy)  
+" Show Method Hierarchynmap <leader>hm <Action>(MethodHierarchy)  
+" Show Type Hierarchynmap <leader>ht <Action>(TypeHierarchy)  
+  
+" =============================="     Folding & Zen Mode" ==============================  
+" Expand/Collapse current regionnmap zz <Action>(ExpandCollapseToggleAction)  
+" Collapse all regionsnmap za <Action>(CollapseAllRegions)  
+" Expand all regionsnmap zA <Action>(ExpandAllRegions)  
+  
+" Toggle Zen Modenmap <leader>z <Action>(ToggleZenMode)  
+  
+" =============================="     GoTo Actions" ==============================  
+" Go to Action (search actions)nmap <leader>a <Action>(GotoAction)  
+nmap ga <Action>(GotoAction) " Duplicate, keeping one." Go to Classnmap gc <Action>(GotoClass)  
+" Go to Filenmap gf <Action>(GotoFile)  
+" Go to Symbolnmap gs <Action>(GotoSymbol)  
+" Go to Testnmap gt <Action>(GotoTest)  
+" Text search action (Find in Files/Go to Text)nmap gT <Action>(TextSearchAction)  
+" Go to Super Method/Declarationnmap go <Action>(GotoSuperMethod)  
+" Go to Declarationnmap gd <Action>(GotoDeclaration)  
+" Go to Type Declarationnmap gD <Action>(GotoTypeDeclaration)  
+" Go to Implementation(s)nmap gi <Action>(GotoImplementation)  
+" Quick Implementations (show pop-up)nmap gI <Action>(QuickImplementations)  
+  
+" =============================="     Terminal" ==============================  
+" Activate Terminal tool windownmap <leader>tt <Action>(ActivateTerminalToolWindow)  
+" Open new terminal in current directorynmap <leader>tc <Action>(Terminal.OpenInTerminal)  
+  
+" =============================="     Bookmarks & Todos & Tasks" ==============================  
+" Toggle bookmark on current linenmap mm <Action>(ToggleBookmark)  
+" Show all bookmarksnmap ms <Action>(ShowBookmarks)  
+  
+" Activate TODO tool windownmap <leader>to <Action>(ActivateTODOToolWindow)  
+  
+" Go to Tasks (Task Management)nmap <leader>ts <Action>(tasks.goto)  
+  
+" =============================="     Git/VCS" ==============================  
+" Show VCS actions groupnmap <leader>v <Action>(VcsGroups)  
+  
+" =============================="     Other" ==============================  
+" Create GitHub Gistnmap \\cg <Action>(Github.Create.Gist)  
+  
+" Open IdeaVim settingsnmap \\v <Action>(VimActions)  
+  
+" Alias for "Replace" command (needs a function definition)command! -nargs=* Replace call Replace(<f-args>)  
+  
+" Custom command to copy current line to clipboard" (This specific mapping `nmap <C-a> ggVG"+y` copies the entire file" to the system clipboard and then pastes it. It's quite aggressive." Consider if `yy` or `"+yy` is more appropriate for just the current line," or clarify its intent.)nmap <C-a> ggVG"+y  
+  
+" =============================="     Plugins (Declaration)" ==============================  
+" Commentary plugin (for `gc` and `gC` actions)Plug 'tpope/vim-commentary'  
+" Surround plugin (for `ys` actions)Plug 'tpope/vim-surround'  
+" Highlight yanked textPlug 'machakann/vim-highlightedyank'
