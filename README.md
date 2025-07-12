@@ -1,6 +1,6 @@
 # My dotfiles
 
-This repository contains all my dotfiles for macOS, including my Brewfile, my config for zsh, tmux, ghostty and more.
+This repository contains all my dotfiles for macOS, including my Brewfile, my config for zsh, zellij, ghostty and more.
 
 ## Prerequisites
 

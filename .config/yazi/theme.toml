@@ -481,7 +481,7 @@ exts = [
   { name = "ixx", text = "", fg = "#74c7ec" },
   { name = "hxx", text = "", fg = "#7f849c" },
   { name = "gql", text = "", fg = "#f38ba8" },
-  { name = "tmux", text = "", fg = "#a6e3a1" },
+  ,
   { name = "ini", text = "", fg = "#7f849c" },
   { name = "m3u8", text = "󰲹", fg = "#f38ba8" },
   { name = "image", text = "", fg = "#f2cdcd" },
