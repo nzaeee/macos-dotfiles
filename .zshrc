@@ -119,7 +119,7 @@ alias reload="source ~/.zshrc"
 # =============================================================================
 
 # Open zellij by default if available
-if command -v zellij &> /dev/null; then
+if command -v zellij &> /dev/null && [ -z "$ZELLIJ" ]; then
   zellij attach --create
 fi
 
