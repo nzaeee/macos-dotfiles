@@ -73,8 +73,9 @@ export FZF_DEFAULT_OPTS="--height 50% --layout=default --border --color=hl:#2dd4
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always -n --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | head -200'"
 
-# Configure fzf for tmux
-export FZF_TMUX_OPTS=" -p90%,70% "
+# Custom key bindings - Change Ctrl+T to Ctrl+F for file search
+bindkey '^F' fzf-file-widget
+bindkey '^T' undefined-key  # Optional: disable the default Ctrl+T binding
 
 # =============================================================================
 #                               ALIASES
