@@ -115,12 +115,12 @@ alias sb="brew services restart sketchybar"
 alias reload="source ~/.zshrc"
 
 # =============================================================================
-#                               TMUX AUTO-START
+#                               ZELLIJ AUTO-START
 # =============================================================================
 
-# Open tmux by default if available
-if command -v tmux &> /dev/null; then
-  tmux attach || tmux
+# Open zellij by default if available
+if command -v zellij &> /dev/null; then
+  zellij attach --create
 fi
 
 

@@ -51,9 +51,7 @@ brew "television"
 # Command correction tool that suggests fixes for typos
 brew "thefuck"
 # Terminal multiplexer for persistent sessions
-brew "tmux"
-# Tmux plugin manager for easy plugin installation
-brew "tpm"
+brew "zellij"
 # Smart directory jumper with learning capabilities
 brew "zoxide"
 # Fish-like autosuggestions for Zsh command history
